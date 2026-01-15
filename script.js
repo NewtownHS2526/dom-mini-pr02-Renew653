@@ -1,47 +1,45 @@
 console.log("Space Launch Dash running");
 
+
 const moveTo = (item, spot) => (spot <= 6 ? item.style.setProperty("grid-column", spot) : null);
+
 
 let apollo_spot = 1;
 let nebula_spot = 1;
 let comet_spot  = 1;
 
+
 // Query Selectors
-const apolloBtn   = document.querySelector("#apolloBtn");
-const nebulaBtn   = document.querySelector("#nebulaBtn");
-const cometBtn    = document.querySelector("#cometBtn");
+const apolloBtn   = document.querySelector("#apollo-btn");
+const nebulaBtn   = document.querySelector("#nebula-btn");
+const cometBtn    = document.querySelector("#comet-btn");
 
-const apolloRocket = document.querySelector("#apolloRocket");
-const nebulaRocket = document.querySelector("#nebulaRocket");
-const cometRocket  = document.querySelector("#cometRocket")
 
-const winnerBox = document.querySelector("#winner")
+const apolloRocket = document.querySelector("#apollo-rocket");
+const nebulaRocket = document.querySelector("#nebula-rocket");
+const cometRocket  = document.querySelector("#comet-rocket");
+
+
+const winnerBox = document.querySelector("#winner");
+
 
 // Click Handlers
 const boostApollo = () => {
-  apollo_spot += 1;
-  moveTo(apolloRocket, apollo_spot);
+    apollo_spot += 1;
+    moveTo(apolloRocket,apollo_spot);
 };
+
 
 const boostNebula = () => {
     nebula_spot += 1;
-    moveTo(nebulaRocket, nebula_spot);
+    moveTo(nebulaRocket,nebula_spot);
 };
+
 
 const boostComet = () => {
     comet_spot += 1;
-    moveTo(nebulaRocket, nebula_spot);
+    moveTo(cometRocket,comet_spot);
 };
-
-// Winner Check
-function checkwinner1 (spot, rocket) {
-    spot = apollo_spot
-    rocket = "apollo";
-    if ()
-}
-
-// Events
-
 
 
 // Winner Check
@@ -76,5 +74,5 @@ nebulaBtn.addEventListener("click", boostNebula);
 cometBtn.addEventListener("click", boostComet);
 apolloBtn.addEventListener("click", checkwinner1);
 nebulaBtn.addEventListener("click", checkwinner2);
-cometBtn.addEventListener("click", checkwinner3);
+cometBtn.addEventListener("click", checkwinner3)
 
